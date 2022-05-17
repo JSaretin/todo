@@ -1,0 +1,205 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    // font-family: "Courier New", Courier, monospace;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+    ::-webkit-scrollbar,
+    ::-webkit-scrollbar-track,
+    ::-webkit-scrollbar-thumb {
+        display: none;
+    }
+}
+
+body {
+    background: linear-gradient(84deg, rgb(186, 130, 130), rgb(69, 14, 146));
+    display: grid;
+    place-items: center;
+    min-height: 100vh;
+    backdrop-filter: blur(2.4px);
+
+    #overlay {
+        position: fixed;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 0%;
+        background: rgba(0, 0, 0, 0.668);
+        backdrop-filter: blur(2px);
+        transition: all ease-in 500ms;
+        z-index: 10;
+    }
+
+    .navbar {
+        width: 100%;
+        height: 10vh;
+        display: flex;
+        align-items: center;
+        place-items: center;
+        justify-content: center;
+        z-index: 30;
+        position: sticky;
+
+        .todo {
+            min-width: 0;
+            max-width: 1000px;
+            width: calc(100% - 1rem);
+            background: rgba(255, 255, 255, 0.84);
+            border-radius: 0.5rem;
+            overflow: hidden;
+
+            #todo-input {
+                height: 100%;
+                width: 100%;
+                padding: 1rem;
+                border: none;
+                outline: none;
+                background-color: transparent;
+                font-size: 20px;
+                font-weight: 600;
+                line-height: 1.7;
+                text-align: center;
+            }
+        }
+    }
+
+    .card {
+        max-width: 1000px;
+        width: calc(100% - 2rem);
+        min-height: 70vh;
+        // height: ;
+        background: rgba(255, 255, 255, 0.4);
+        border-radius: 0.5rem;
+        // padding: 4rem;
+        position: relative;
+        overflow: hidden;
+
+        .bg {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(48, 4, 91, 0.146);
+            z-index: 1;
+            filter: blur(4px) saturate(1.2);
+        }
+
+        .todos {
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 100%;
+            z-index: 2;
+            position: absolute;
+            padding: 0;
+
+            transition: all ease 300ms;
+
+            .find {
+                width: 100%;
+                display: flex;
+                align-items: flex-end;
+                justify-content: flex-end;
+                place-items: flex-end;
+                // margin-bottom: 1rem;
+
+                input {
+                    padding: 0.6rem;
+                    border-radius: 0.5rem;
+                    width: 40%;
+                    border: none;
+                    outline: none;
+                }
+            }
+
+            #todos {
+                height: 100%;
+                width: 100%;
+                overflow-y: scroll;
+                display: flex;
+                flex-direction: column;
+                gap: 1rem;
+                background: rgba(0, 0, 0, 0.459);
+                border-radius: 0.5rem;
+                padding: 1rem;
+
+                .todo {
+                    width: auto;
+                    display: flex;
+                    justify-content: space-between;
+                    // justify-content: center;
+                    place-items: center;
+                    padding: 1rem;
+                    background-color: rgba(136, 134, 134, 0.744);
+                    border-radius: 0.5rem;
+                    transition: all ease 200ms;
+
+                    p {
+                        font-size: 16px;
+                        color: #fff;
+                        font-weight: 500;
+                        border: none;
+                        outline: none;
+                    }
+
+                    .option {
+                        display: flex;
+                        gap: 0.5rem;
+                        align-items: center;
+                        place-items: center;
+
+                        input[type="button"] {
+                            width: 3rem;
+                            aspect-ratio: 1/1;
+                            border: none;
+                            outline: none;
+                            background: transparent;
+                            font-size: 1.5rem;
+                            cursor: pointer;
+                            // padding: 0.5rem;
+                            transition: all ease-in 150ms;
+                            border-radius: 100%;
+
+                            &:hover {
+                                background: rgba(199, 199, 199, 0.592);
+                                // filter: grayscale(1.2);
+                            }
+                        }
+                    }
+                }
+            }
+
+            @media screen and (min-width: 650px) {
+                padding: 4rem;
+
+                #todos {
+                    padding: 2rem;
+
+                    .todo {
+                        .option {
+                            gap: 0.5rem;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    footer {
+        width: 100%;
+        height: 5vh;
+        display: grid;
+        place-items: center;
+
+        p {
+            color: rgb(30, 8, 62);
+
+            a {
+                text-decoration: none;
+                color: rgb(42, 51, 156);
+            }
+        }
+    }
+}
