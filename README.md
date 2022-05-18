@@ -4,7 +4,9 @@ So everyone is talking about creating a todo app, I didn't really give it much a
 
 I created this todo app using HTML, SCSS and vanilla JavaScript. I hope to add more fuctionality to this project, this proccess has been fun for me, so I have decided to add some uniqe features.
 
-[`view live demo`]()
+[`view live demo`](https://fastidious-druid-2ff646.netlify.app)
+
+![Javatpoint](https://github.com/JSaretin/todo/blob/main/preview.png)
 
 ## Todo
 
